@@ -1,0 +1,112 @@
+name: Standort melden / korrigieren
+description: Melde ein neues Kernkraftwerk oder korrigiere bestehende Daten
+title: "[Request] "
+labels: ["data-request"]
+
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Typ des Requests
+      options:
+        - Neuer Standort
+        - Korrektur bestehender Daten
+        - Statusänderung
+    validations:
+      required: true
+
+  - type: input
+    id: name
+    attributes:
+      label: Name der Anlage
+      placeholder: z.B. Isar 2
+    validations:
+      required: true
+
+  - type: input
+    id: country
+    attributes:
+      label: Land
+      placeholder: z.B. Deutschland
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options:
+        - In Betrieb
+        - Im Bau
+        - Stillgelegt
+        - Rückgebaut
+        - Geplant
+        - In Prüfung
+        - Suspendiert
+
+  - type: input
+    id: reactor
+    attributes:
+      label: Reaktortyp
+      placeholder: z.B. BWR, PWR
+
+  - type: input
+    id: capacity
+    attributes:
+      label: Leistung (MWe netto)
+      placeholder: z.B. 1400
+
+  - type: input
+    id: units
+    attributes:
+      label: Anzahl Einheiten
+      placeholder: z.B. 2
+
+  - type: input
+    id: construction
+    attributes:
+      label: Baubeginn (Jahr)
+      placeholder: z.B. 1976
+
+  - type: input
+    id: commissioning
+    attributes:
+      label: Inbetriebnahme (Jahr)
+      placeholder: z.B. 1984
+
+  - type: input
+    id: shutdown
+    attributes:
+      label: Abschaltung (Jahr, falls zutreffend)
+
+  - type: input
+    id: operator
+    attributes:
+      label: Betreiber
+      placeholder: z.B. RWE
+
+  - type: input
+    id: lat
+    attributes:
+      label: Breitengrad
+      placeholder: z.B. 48.513
+
+  - type: input
+    id: lon
+    attributes:
+      label: Längengrad
+      placeholder: z.B. 10.402
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Quelle
+      description: Bitte möglichst offizielle Quelle (IAEA, Betreiber, etc.)
+    validations:
+      required: true
+
+  - type: textarea
+    id: comment
+    attributes:
+      label: Kommentar / Details
+      description: Zusatzinfos oder Kontext
